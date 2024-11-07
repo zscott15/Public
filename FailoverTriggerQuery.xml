@@ -1,0 +1,10 @@
+<QueryList>
+  <Query Id="0" Path="Microsoft-Windows-FailoverClustering/Operational">
+    <Select Path="Microsoft-Windows-FailoverClustering/Operational">
+	*[System[(EventID=1641)]]
+    </Select>
+    <Suppress Path="Microsoft-Windows-FailoverClustering/Operational">
+	*[EventData[Data[@Name='GroupName'] and (Data='Cluster Group' or Data='Available Storage' or Data='Task Scheduler')]]
+    </Suppress>
+  </Query>
+</QueryList>
